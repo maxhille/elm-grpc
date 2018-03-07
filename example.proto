@@ -1,9 +1,16 @@
 syntax = "proto3";
-// START OMIT
+// START GRPC OMIT
+// START PROTOBUF OMIT
 message SearchRequest {
   string query = 1;
-  int32 page_number = 2;
-  int32 result_per_page = 3;
 }
-// END OMIT
 
+message SearchResponse {
+  repeated string items = 1;
+}
+// END PROTOBUF OMIT
+
+service SearchService {
+  rpc Search(SearchRequest) returns (SearchResponse) {}
+}
+// END GRPC OMIT

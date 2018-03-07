@@ -1,6 +1,6 @@
 Elm + gRPC
 A typesafe web frontend
-Tags: elm, appengine, grpc
+Tags: elm, grpc, grpc-web, go
 
 Max Hille
 Software Engineer
@@ -13,20 +13,45 @@ http://github.com/maxhille/
 Technical context
 
 - Protobuf
-- AppEngine
 - gRPC
+- gRPC-Web
 
 How -> Elm
 
-- gRPC-Web
 - elm-protobuf
 - ports glue
 
 * Protobuf
 
 by Google
-https://github.com/google/protobuf
+.link https://github.com/google/protobuf
 
 * example.proto
 
-.code example.proto /START OMIT/,/END OMIT/
+.code example.proto /START PROTOBUF OMIT/,/END PROTOBUF OMIT/
+
+* gRPC
+
+.link https://grpc.io
+
+* example.proto
+
+.code example.proto /START GRPC OMIT/,/END GRPC OMIT/
+
+* server.go
+
+.code cmd/server/server.go /START OMIT/,/END OMIT/
+
+* gRPC-WEB
+
+- Draft Spec
+.link https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md
+
+- prototype implementation
+.link https://github.com/improbable-eng/grpc-web
+
+
+
+* server-web.go
+
+.code cmd/server-web/server-web.go /START OMIT/,/END OMIT/
