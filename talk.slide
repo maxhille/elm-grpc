@@ -1,0 +1,32 @@
+Elm + gRPC
+A typesafe web frontend
+Tags: elm, appengine, grpc
+
+Max Hille
+Software Engineer
+mh@lambdasoup.com
+http://lambdasoup.com/
+http://github.com/maxhille/
+
+* Talk structure
+
+Technical context
+
+- Protobuf
+- AppEngine
+- gRPC
+
+How -> Elm
+
+- gRPC-Web
+- elm-protobuf
+- ports glue
+
+* Protobuf
+
+by Google
+https://github.com/google/protobuf
+
+* example.proto
+
+.code example.proto /START OMIT/,/END OMIT/
