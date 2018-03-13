@@ -16,4 +16,5 @@ $(proto): example.proto
 	mkdir -p build
 	protoc \
 	--go_out=plugins=grpc:build \
+	--elm_out=plugins=grpc:build \
   example.proto \

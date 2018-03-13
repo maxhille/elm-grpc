@@ -8,6 +8,7 @@ mh@lambdasoup.com
 http://lambdasoup.com/
 http://github.com/maxhille/
 
+
 * Talk structure
 
 Technical context
@@ -21,6 +22,7 @@ How -> Elm
 - elm-protobuf
 - ports glue
 
+
 * Protobuf
 
 by Google
@@ -30,17 +32,21 @@ by Google
 
 .code example.proto /START PROTOBUF OMIT/,/END PROTOBUF OMIT/
 
+
 * gRPC
 
 .link https://grpc.io
+
 
 * example.proto
 
 .code example.proto /START GRPC OMIT/,/END GRPC OMIT/
 
+
 * server.go
 
 .code cmd/server/server.go /START OMIT/,/END OMIT/
+
 
 * gRPC-WEB
 
@@ -51,7 +57,9 @@ by Google
 .link https://github.com/improbable-eng/grpc-web
 
 
-
 * server-web.go
 
 .code cmd/server-web/server-web.go /START OMIT/,/END OMIT/
+
+
+* elm-protobuf
