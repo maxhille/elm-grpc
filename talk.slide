@@ -25,8 +25,11 @@ How -> Elm
 
 * Protobuf
 
-by Google
+- open source by Google
 .link https://github.com/google/protobuf
+- as transport format (ie. replaces JSON)
+- more type safety (proper types)
+- can be used backwards-compatible (eg. for old clients)
 
 * example.proto
 
@@ -35,7 +38,11 @@ by Google
 
 * gRPC
 
+- also by Google
+- protobuf v3
 .link https://grpc.io
+- adds service/rpc definitions to protobuf DSL
+- needs HTTP2, especially for streaming
 
 
 * example.proto
@@ -50,6 +57,8 @@ by Google
 
 * gRPC-WEB
 
+- gRPC for HTTP1
+- loses streaming
 - Draft Spec
 .link https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md
 
@@ -63,3 +72,13 @@ by Google
 
 
 * elm-protobuf
+
+- generated elm en-/decoders from .proto files
+- no rpc support (yet)
+- only JSON, no binary support
+
+
+* the missing glue
+
+- add rpc to elm-protobuf
+.link https://github.com/tiziano88/elm-protobuf/issues/2
