@@ -52,7 +52,8 @@ How -> Elm
 
 * server.go
 
-.code cmd/server/server.go /START OMIT/,/END OMIT/
+.code example.go /START GRPC OMIT/,/END GRPC OMIT/
+.code example.go /START SERVICE OMIT/,/END SERVICE OMIT/
 
 
 * gRPC-WEB
@@ -68,7 +69,8 @@ How -> Elm
 
 * server-web.go
 
-.code cmd/server-web/server-web.go /START OMIT/,/END OMIT/
+.code example.go /START GRPCWEB OMIT/,/END GRPCWEB OMIT/
+.code example.go /START SERVICE OMIT/,/END SERVICE OMIT/
 
 
 * elm-protobuf
