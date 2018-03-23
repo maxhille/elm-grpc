@@ -1,7 +1,12 @@
 port module Main exposing (main)
 
 import Html exposing (..)
+import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Example exposing (..)
+
+
+port search : SearchRequest -> Cmd msg
 
 
 type alias Model =
@@ -14,20 +19,22 @@ init =
 
 
 type Msg
-    = NoOp
+    = Search String
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ text "test" ]
+        [ input [ placeholder "Text to reverse", onInput Search ] []
+        , text "test"
+        ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NoOp ->
-            ( model, Cmd.none )
+        Search query ->
+            ( model, search <| SearchRequest query )
 
 
 subscriptions : Model -> Sub Msg

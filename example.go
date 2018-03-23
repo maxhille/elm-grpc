@@ -42,7 +42,7 @@ func bindGRPCWEB() {
 
 	// wrap gRPC server into 'normal' go http handlers
 	webGrpc := grpcweb.WrapServer(s)
-	http.HandleFunc("/example.SearchService/", webGrpc.ServeHTTP)
+	http.HandleFunc("/SearchService/", webGrpc.ServeHTTP)
 
 	// serve index.html
 	http.Handle("/", http.FileServer(http.Dir(".")))
@@ -55,6 +55,7 @@ func bindGRPCWEB() {
 // START SERVICE OMIT
 func (s service) Search(ctx context.Context, req *pb.SearchRequest) (*pb.SearchResponse, error) {
 	// items: []string{"Mary", "Peter", "Bob", "Alice"}
+	log.Printf("handling search request: %q", req.Query)
 	return nil, fmt.Errorf("not implemented yet")
 }
 

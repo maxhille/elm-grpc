@@ -4,7 +4,8 @@
   "repository": "https://github.com/maxhille/elm-grpc.git",
   "license": "APACHE2",
   "source-directories": [
-    "."
+    ".",
+    "build"
   ],
   "exposed-modules": [],
   "dependencies": {
