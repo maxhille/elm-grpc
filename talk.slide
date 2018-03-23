@@ -100,3 +100,4 @@ communication:
 
 - add rpc to elm-protobuf
 .link https://github.com/tiziano88/elm-protobuf/issues/2
+- glue in TypeScript
