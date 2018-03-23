@@ -2,11 +2,13 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './js-src/app.js',
+  entry: './glue.js',
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'app')
+    path: path.resolve(__dirname, 'build')
   },
   devtool: 'source-map',
-  performance: { hints: false }
+  performance: {
+    hints: false
+  }
 };

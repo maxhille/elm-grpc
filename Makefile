@@ -2,7 +2,7 @@ proto = build/example.pb.go build/Example.elm build/example_service_pb.js build/
 elm = build/index.html
 js = app/index.js app/index.js.map
 
-all: $(proto) $(elm)
+all: $(proto) $(elm) $(js)
 
 clean:
 	rm -rf build
@@ -17,6 +17,9 @@ $(proto): example.proto
 	--js_service_out=build \
   example.proto \
 
+$(js): $(elm) $(proto) glue.js webpack.config.js
+	webpack
+
 $(elm): Main.elm build/Example.elm
 	mkdir -p build
-	elm make Main.elm --output build/index.html
+	elm make Main.elm --output build/elm.js

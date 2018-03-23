@@ -45,7 +45,7 @@ func bindGRPCWEB() {
 	http.HandleFunc("/example.SearchService/", webGrpc.ServeHTTP)
 
 	// serve index.html
-	http.Handle("/", http.FileServer(http.Dir("build")))
+	http.Handle("/", http.FileServer(http.Dir(".")))
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

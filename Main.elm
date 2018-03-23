@@ -20,7 +20,7 @@ type Msg
 view : Model -> Html Msg
 view model =
     div []
-        []
+        [ text "test" ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

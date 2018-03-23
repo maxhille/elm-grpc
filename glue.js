@@ -1,9 +1,12 @@
-var service = require("./service_pb_service")
-var pb = require("./service_pb")
+var service = require("./build/example_pb_service")
+var pb = require("./build/example_pb")
 var jspb = require("google-protobuf")
 var grpc = require("grpc-web-client")
+import elm from "./build/elm"
 
-export function connect(app) {
+var app = elm.Main.fullscreen()
+
+function connect(app) {
   var host = window.location.protocol + "//" + window.location.host;
   app.ports.addBank.subscribe(function(msg) {
     var bank = new pb.AddBankRequest();
