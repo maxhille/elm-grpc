@@ -24,6 +24,9 @@ func main() {
 	// wrap gRPC server into 'normal' go http handlers
 	webGrpc := grpcweb.WrapServer(s)
 	http.HandleFunc("/example.SearchService/", webGrpc.ServeHTTP)
+
+	http.Handle("/", http.FileServer(http.Dir("build")))
+
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 

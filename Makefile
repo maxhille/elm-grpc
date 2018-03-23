@@ -1,7 +1,7 @@
-proto = build/example.pb.go
+proto = build/example.pb.go build/Example.elm
+elm = build/index.html
 
-# all: $(js)
-all: $(proto)
+all: $(proto) $(elm)
 
 watch:
 	while true; do \
@@ -18,3 +18,6 @@ $(proto): example.proto
 	--go_out=plugins=grpc:build \
 	--elm_out=plugins=grpc:build \
   example.proto \
+
+$(elm): Main.elm build/Example.elm
+	elm make Main.elm --output build/index.html
