@@ -11,6 +11,8 @@ http://github.com/maxhille/
 
 * Talk structure
 
+Motivation
+
 Technical context
 
 - Protobuf
@@ -21,6 +23,20 @@ How -> Elm
 
 - elm-protobuf
 - ports glue
+
+* Motivation
+
+type safety by component:
+
+code:
+
+- backend code <- safe (use proper language)
+- frontend Elm <- safe :-)
+
+communication:
+
+- protocol REST <- unsafe (usually hand-typed urls here and there)
+- transport JSON <- unsafe (also hand-typed usually)
 
 
 * Protobuf
