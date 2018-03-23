@@ -1,6 +1,7 @@
-proto = build/example.pb.go build/Example.elm build/example_service_pb.js build/example_service_pb_service.js
-elm = build/index.html
-js = app/index.js app/index.js.map
+proto = build/example.pb.go build/Example.elm build/example_pb.js \
+ 	build/example_pb_service.js
+elm = build/elm.js
+js = build/index.js build/index.js.map
 
 all: $(proto) $(elm) $(js)
 
@@ -18,6 +19,7 @@ $(proto): example.proto
   example.proto \
 
 $(js): $(elm) $(proto) glue.js webpack.config.js
+	mkdir -p build
 	webpack
 
 $(elm): Main.elm build/Example.elm
