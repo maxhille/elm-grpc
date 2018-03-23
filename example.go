@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net"
 	"net/http"
+	"strings"
 
 	"golang.org/x/net/context"
 
@@ -54,9 +54,19 @@ func bindGRPCWEB() {
 
 // START SERVICE OMIT
 func (s service) Search(ctx context.Context, req *pb.SearchRequest) (*pb.SearchResponse, error) {
-	// items: []string{"Mary", "Peter", "Bob", "Alice"}
 	log.Printf("handling search request: %q", req.Query)
-	return nil, fmt.Errorf("not implemented yet")
+
+	ns := []string{"mary", "peter", "bob", "alice", "mark", "john", "karen"}
+	result := []string{}
+
+	for _, n := range ns {
+		if req.Query != "" && strings.Contains(n, req.Query) {
+			result = append(result, n)
+		}
+	}
+
+	res := pb.SearchResponse{Items: result}
+	return &res, nil
 }
 
 // END SERVICE OMIT

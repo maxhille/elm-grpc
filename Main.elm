@@ -9,24 +9,39 @@ import Example exposing (..)
 port search : SearchRequest -> Cmd msg
 
 
+port respond : (SearchResponse -> msg) -> Sub msg
+
+
 type alias Model =
-    {}
+    { names : List String
+    }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( { names = []
+      }
+    , Cmd.none
+    )
 
 
 type Msg
     = Search String
+    | Response SearchResponse
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ input [ placeholder "Text to reverse", onInput Search ] []
-        , text "test"
+        [ input [ placeholder "search names...", onInput Search ] []
+        , case model.names of
+            [] ->
+                p [] [ text "no hits" ]
+
+            lst ->
+                lst
+                    |> List.map (\name -> li [] [ text name ])
+                    |> ul []
         ]
 
 
@@ -36,10 +51,13 @@ update msg model =
         Search query ->
             ( model, search <| SearchRequest query )
 
+        Response response ->
+            ( { model | names = response.items }, Cmd.none )
+
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+    respond Response
 
 
 main : Program Never Model Msg

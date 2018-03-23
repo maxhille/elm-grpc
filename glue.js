@@ -14,7 +14,11 @@ app.ports.search.subscribe(function(msg) {
     request: req,
     host: host,
     onEnd: function(res) {
-      // TODO log error?;
+      var response = {
+        "items": res.message.getItemsList()
+      }
+      console.log(response)
+      app.ports.respond.send(response)
     }
   });
 });
