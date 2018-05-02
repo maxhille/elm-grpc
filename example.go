@@ -47,6 +47,7 @@ func bindGRPCWEB() {
 	// serve index.html
 	http.Handle("/", http.FileServer(http.Dir(".")))
 
+	log.Println("starting webserver at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
