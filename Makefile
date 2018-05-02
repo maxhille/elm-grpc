@@ -18,7 +18,7 @@ $(proto): example.proto
 	--js_service_out=build \
   example.proto \
 
-$(js): $(elm) $(proto) glue.js webpack.config.js
+$(js): $(elm) $(proto) binder.js glue.js webpack.config.js
 	mkdir -p build
 	webpack
 
